@@ -74,12 +74,12 @@ try {
 
   /// Rest parameter ///
 
-  /*
+  
 	(function UseRestParameter() {
 		// Add just one rest parameter and use the number of elements in this parameter 
 		// (What is the name of that property?) in the return statement to let the test pass.
-		function foo(a, b) {
-			return a + b;
+		function foo(a, b, ...c) {
+			return a + b + c.length
 		}
 
 		// Don't make changes below this line	
@@ -89,11 +89,11 @@ try {
 		
 		solved++;
 	})();
-	*/
+	
 
   /// Spread operator ///
 
-  /*
+  
 	(function UseSpreadOperator1() {
 		function add(a, b, c) {
 			return a + b + c;
@@ -102,7 +102,7 @@ try {
 		let values = [1, 3, 6];
 		
 		// Use spread operator to let the test pass.
-		let result = add(values);
+		let result = add(...values);
 
 		// Don't make changes below this line	
 		
@@ -110,16 +110,16 @@ try {
 		
 		solved++;
 	})();
-	*/
+	
 
-  /*
+  
 	(function UseSpreadOperator2() {
 		const arr1 = [1, 2, 3];
 		const value = 4;
 		const arr2 = [5, 6];
 		
 		// Change after = to let the test pass. DO NOT use concat or loops, but use the spread operator.
-		let result = [0];
+		let result = [...arr1, value, ...arr2];
 
 		// Don't make changes below this line	
 		
@@ -127,16 +127,14 @@ try {
 		
 		solved++;
 	})();
-	*/
+	
 
   /// Arrow functions ///
 
-  /*
+  
 	(function UseArrow1() {
 		// Rewrite double as arrow function and make the test pass.
-		let double = function (x) {
-			return x;
-		};
+		let double = x => x+x;
 
 		// Don't make changes below this line	
 		
@@ -145,12 +143,12 @@ try {
 		
 		solved++;
 	})();
-	*/
+	
 
-  /*
+  
 	(function UseArrow2() {
 		// Correct the errors in the arrow function.
-		let add = x, y => return x * y;
+		let add = (x, y) => x + y;
 
 		// Don't make changes below this line	
 		
@@ -159,19 +157,18 @@ try {
 		
 		solved++;
 	})();
-	*/
+	
 
   /// Destructuring ///
 
-  /*
+  
 	(function UseArrayDestructuring1() {
 		const arr = [1, 2, 3, 4, 5, 6];
 		
 		// Use array destructuring to change the 3 statements below into 1 statement.
 		// Tip: Spread operator might be needed too.
-		let a = arr[0];
-		let b = arr[2];
-		let c = arr.slice(3); 
+		
+		let [a, , b, ...c] = arr;
 
 		// Don't make changes below this line	
 		
@@ -181,18 +178,16 @@ try {
 		
 		solved++;
 	})();
-	*/
+	
 
-  /*
+  
 	(function UseArrayDestructuring2() {
 		let a = 1;
 		let b = 2;
 		
 		// Use array destructuring to change the 3 statements below into 1 statement.
 		// You should not need a temporary variable anymore.
-		let tmp = a;
-		a = b;
-		b = tmp; 
+		[a, b] = [b, a];
 
 		// Don't make changes below this line	
 		
@@ -201,9 +196,9 @@ try {
 		
 		solved++;
 	})();
-	*/
+	
 
-  /*
+  
 	(function UseObjectDestructuring1() {
 		let obj = {
 			name: 'Oslo',
@@ -212,9 +207,7 @@ try {
 		}
 		
 		// Use object destructuring to change the 3 statements below into 1 statement.
-		let name = obj.name;
-		let age = obj.age;
-		let add = obj.add;
+		let {name, age, add} = obj;
 
 		// Don't make changes below this line	
 		
@@ -224,13 +217,13 @@ try {
 		
 		solved++;
 	})();
-	*/
+	
 
-  /*
+  
   (function UseParameterDestructuring1() {
     // Adjust the code to let the test succeed.
 
-    const a = 'Oslo' + 985;
+    const a = ['Oslo', 985];
 
     // Don't make changes below this line
 
@@ -243,13 +236,13 @@ try {
 
     solved++;
   })();
-	*/
+	
 
-  /*
+  
   (function UseParameterDestructuring2() {
     // Adjust the code to let the test succeed.
 
-    const a = 'Oslo' + 985;
+    const a = {name: 'Oslo', age: 985};
 
     // Don't make changes below this line
 
@@ -262,7 +255,7 @@ try {
 
     solved++;
   })();
-	*/
+	
 
   /// Property shorthand ///
 
